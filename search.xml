@@ -3,7 +3,7 @@
   <entry>
     <title></title>
     <url>%2F2019%2F05%2F01%2FCreatBlog%2F</url>
-    <content type="text"><![CDATA[title： 使用Github+Hexo搭建属于你自己的博客date： 2019-5-1 22：09：00 tags：如果你也想要定制一个自己的博客，那么就来吧！ #博客优化##分类设置 ###添加分类列表 在项目根目录下，执行下面的命令行，新建分类页面，然后会在项目根目录下的 source 文件夹中新建一个 categories 文件夹。hexo new page categories 打开 categories 文件夹中的 index.md 文件，添加type标签 ，设置为 “categories”。 接着到theme文件夹下的 _config.yml 配置文件下，定位到 menu 模块，把 categories前面的#去掉。 然后将代码提交到GitHub重新打开博客页面就可以看到多了一个分类。###添加博客头像 打开主题文件夹下的 _config.yml 配置文件，定位到 avatar，然后把一个在线的头像图片地址（百度图片中直接复制链接即可），作为 url 的参数。 将本地代码上传至GitHub，刷新页面，就可以了。###代码高亮设置 在主题文件夹的 _config.yml 配置文件中，定位到 highlight_theme，根据个人喜好修改语法高亮。 由于本人使用Next主题，Next 默认使用的是白色的 normal 主题，可选的语法高亮有 normal，night， night blue， night bright，night eighties。]]></content>
+    <content type="text"><![CDATA[title： 使用Github+Hexo搭建属于你自己的博客date： 2019-5-1 22：09：00 tags：如果你也想要定制一个自己的博客，那么就跟着一起来吧！ #博客优化##分类设置 ###添加分类列表 在项目根目录下，执行下面的命令行，新建分类页面，然后会在项目根目录下的 source 文件夹中新建一个 categories 文件夹。hexo new page categories 打开 categories 文件夹中的 index.md 文件，添加type标签 ，设置为 “categories”。 接着到theme文件夹下的 _config.yml 配置文件下，定位到 menu 模块，把 categories前面的#去掉。 然后将代码提交到GitHub重新打开博客页面就可以看到多了一个分类。###添加博客头像 打开主题文件夹下的 _config.yml 配置文件，定位到 avatar，然后把一个在线的头像图片地址（百度图片中直接复制链接即可），作为 url 的参数。 将本地代码上传至GitHub，刷新页面，就可以了。###代码高亮设置 在主题文件夹的 _config.yml 配置文件中，定位到 highlight_theme，根据个人喜好修改语法高亮。 由于本人使用Next主题，Next 默认使用的是白色的 normal 主题，可选的语法高亮有 normal，night， night blue， night bright，night eighties。]]></content>
   </entry>
   <entry>
     <title><![CDATA[Think in Java]]></title>
