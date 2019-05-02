@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html class="theme-next gemini use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -70,7 +70,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '7.1.1',
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
     back2top: true,
@@ -130,6 +130,16 @@
 
 
 
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7f24d48cf7bb3b546eeeadd24538b3b6";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -247,14 +257,40 @@
 
       
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
     </ul>
   
 
   
-    
 
   
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
 
+
+
+    </div>
   
 </nav>
 
@@ -274,166 +310,12 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+            
+
+          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://chnwangkai.top/2019/05/01/CreatBlog1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王凯">
-      <meta itemprop="description" content="JAVA">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="real010的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/01/CreatBlog1/" class="post-title-link" itemprop="url">CreatBlog1</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-05-01 23:31:03 / 修改时间：23:33:15" itemprop="dateCreated datePublished" datetime="2019-05-01T23:31:03+08:00">2019-05-01</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>如果你也想要定制一个自己的博客，那么就跟着一起来吧！</p>
-<h2 id="博客优化"><a href="#博客优化" class="headerlink" title="#博客优化"></a>#博客优化</h2><p>##分类设置</p>
-<p>###添加分类列表</p>
-<ol>
-<li>在项目根目录下，执行下面的命令行，新建分类页面，然后会在项目根目录下的 <strong>source</strong> 文件夹中新建一个 <strong>categories</strong> 文件夹。<br><code>hexo new page categories</code></li>
-<li>打开 <strong>categories</strong> 文件夹中的 <strong>index.md</strong> 文件，添加<strong>type</strong>标签 ，设置为 <strong>“categories”</strong>。 </li>
-<li>接着到<strong>theme</strong>文件夹下的 <strong>_config.yml</strong> 配置文件下，定位到 <strong>menu</strong> 模块，把 <strong>categories</strong>前面的<strong><em>#</em></strong>去掉。</li>
-<li>然后将代码提交到<strong>GitHub</strong>重新打开博客页面就可以看到多了一个<strong>分类</strong>。<br>###添加博客头像</li>
-</ol>
-<ul>
-<li>打开主题文件夹下的 <strong>_config.yml</strong> 配置文件，定位到 <strong>avatar</strong>，然后把一个在线的头像图片地址（百度图片中直接复制链接即可），作为 url 的参数。</li>
-<li>将本地代码上传至GitHub，刷新页面，就可以了。<br>###代码高亮设置</li>
-<li>在主题文件夹的 <strong>_config.yml</strong> 配置文件中，定位到 <strong>highlight_theme</strong>，根据个人喜好修改语法高亮。</li>
-<li>由于本人使用<strong>Next</strong>主题，<strong>Next</strong> 默认使用的是白色的 <strong>normal</strong> 主题，可选的语法高亮有 <strong>normal</strong>，<strong>night</strong>， <strong>night blue</strong>， <strong>night bright</strong>，<strong>night eighties</strong>。</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
     
       
 
@@ -455,7 +337,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王凯">
       <meta itemprop="description" content="JAVA">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/20190501224014.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -512,7 +394,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-02 08:27:51" itemprop="dateModified" datetime="2019-05-02T08:27:51+08:00">2019-05-02</time>
+                <time title="修改时间：2019-05-02 19:14:45" itemprop="dateModified" datetime="2019-05-02T19:14:45+08:00">2019-05-02</time>
               
             
           </span>
@@ -549,19 +431,41 @@
         
           
             <p>如果你也想要定制一个自己的博客，那么就跟着一起来吧！</p>
-<h2 id="博客优化"><a href="#博客优化" class="headerlink" title="#博客优化"></a>#博客优化</h2><p>##分类设置</p>
-<p>###添加分类列表</p>
-<ol>
+<h1 id="博客优化"><a href="#博客优化" class="headerlink" title="博客优化"></a>博客优化</h1><h2 id="添加分类列表"><a href="#添加分类列表" class="headerlink" title="添加分类列表"></a>添加分类列表</h2><ol>
 <li>在项目根目录下，执行下面的命令行，新建分类页面，然后会在项目根目录下的 <strong>source</strong> 文件夹中新建一个 <strong>categories</strong> 文件夹。<br><code>hexo new page categories</code></li>
 <li>打开 <strong>categories</strong> 文件夹中的 <strong>index.md</strong> 文件，添加<strong>type</strong>标签 ，设置为 <strong>“categories”</strong>。 </li>
 <li>接着到<strong>theme</strong>文件夹下的 <strong>_config.yml</strong> 配置文件下，定位到 <strong>menu</strong> 模块，把 <strong>categories</strong>前面的<strong><em>#</em></strong>去掉。</li>
-<li>然后将代码提交到<strong>GitHub</strong>重新打开博客页面就可以看到多了一个<strong>分类</strong>。<br>###添加博客头像</li>
+<li>然后将代码提交到<strong>GitHub</strong>重新打开博客页面就可以看到多了一个<strong>分类</strong>。<h2 id="添加博客头像"><a href="#添加博客头像" class="headerlink" title="添加博客头像"></a>添加博客头像</h2></li>
+<li>使用完整互联网URL</li>
 </ol>
 <ul>
-<li>打开主题文件夹下的 <strong>_config.yml</strong> 配置文件，定位到 <strong>avatar</strong>，然后把一个在线的头像图片地址（百度图片中直接复制链接即可），作为 url 的参数。</li>
-<li>将本地代码上传至GitHub，刷新页面，就可以了。<br>###代码高亮设置</li>
+<li>打开主题文件夹下的 <strong>_config.yml</strong> 配置文件，定位到 <strong>avatar</strong>，然后把一个在线的头像图片地址（百度图片中直接复制链接即可），作为 <strong>url</strong> 的参数。</li>
+<li>将本地代码上传至<strong>GitHub</strong>，刷新页面，就可以了。</li>
+</ul>
+<ol start="2">
+<li>站点内的地址</li>
+</ol>
+<ul>
+<li>将头像放置主题目录下的 <em>source/uploads/</em>（新建 uploads 目录若不存在）<br>配置为：<em>url: /uploads/avatar.png</em>，或者 放置在 <em>source/images</em> 目录下<br>配置为：<em>url: /images/avatar.png</em>。</li>
+<li>刷新页面重试。<h2 id="代码高亮设置"><a href="#代码高亮设置" class="headerlink" title="代码高亮设置"></a>代码高亮设置</h2></li>
 <li>在主题文件夹的 <strong>_config.yml</strong> 配置文件中，定位到 <strong>highlight_theme</strong>，根据个人喜好修改语法高亮。</li>
-<li>由于本人使用<strong>Next</strong>主题，<strong>Next</strong> 默认使用的是白色的 <strong>normal</strong> 主题，可选的语法高亮有 <strong>normal</strong>，<strong>night</strong>， <strong>night blue</strong>， <strong>night bright</strong>，<strong>night eighties</strong>。</li>
+<li>由于本人使用<strong>Next</strong>主题，<strong>Next</strong> 默认使用的是白色的 <strong>normal</strong> 主题，可选的语法高亮有 <strong>normal</strong>，<strong>night</strong>， <strong>night blue</strong>， <strong>night bright</strong>，<strong>night eighties</strong>。<h2 id="博客添加站内搜索"><a href="#博客添加站内搜索" class="headerlink" title="博客添加站内搜索"></a>博客添加站内搜索</h2></li>
+</ul>
+<h2 id="百度统计"><a href="#百度统计" class="headerlink" title="百度统计"></a>百度统计</h2><ol>
+<li>登录 <a href="http://tongji.baidu.com/" target="_blank" rel="noopener">百度统计</a>， 定位到站点的代码获取页面</li>
+<li>复制 <em>hm.js?</em> 后面那串统计脚本 id。</li>
+<li>编辑 主题配置文件， 修改字段 <em>baidu_analytics</em> 字段，值设置成你的百度统计脚本 id。<h2 id="网页底部字数统计"><a href="#网页底部字数统计" class="headerlink" title="网页底部字数统计"></a>网页底部字数统计</h2></li>
+</ol>
+<ul>
+<li>在项目根目录安装<strong>hexo</strong>插件<br><code>npm install hexo-wordcount --save</code></li>
+<li><p>打开主题文件夹下的 <em>layout/_partials/footer.swig</em> 文件，在文末添加上下面这段代码。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"theme-info"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"powered-by"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-count"</span>&gt;</span>博客全站共&#123;&#123; totalcount(site) &#125;&#125;字<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>deploy查看效果。</p>
+<h2 id="网页底部添加访问量"><a href="#网页底部添加访问量" class="headerlink" title="网页底部添加访问量"></a>网页底部添加访问量</h2></li>
+<li>上一节已经安装相关插件，所以本次不需要再次安装。</li>
+<li>打开主题文件夹下的 <em>layout/_partials/footer.swig</em> 文件，在文末添加如下代码。<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">"//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"powered-by"</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-user-md"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_site_pv"</span>&gt;</span></span><br><span class="line"> 本站访问量:<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_pv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>次</span><br><span class="line"> <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-divider"</span>&gt;</span>|<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_site_uv"</span>&gt;</span></span><br><span class="line"> 本站总访客量：<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_uv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>人</span><br><span class="line"> <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 
           
@@ -624,7 +528,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王凯">
       <meta itemprop="description" content="JAVA">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/20190501224014.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -766,7 +670,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王凯">
       <meta itemprop="description" content="JAVA">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/20190501224014.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -940,6 +844,8 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image" src="/images/20190501224014.png" alt="王凯">
+            
               <p class="site-author-name" itemprop="name">王凯</p>
               <div class="site-description motion-element" itemprop="description">JAVA</div>
           </div>
@@ -951,7 +857,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1007,7 +913,7 @@
 
   
 </div>
-
+<!--
 
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
 
@@ -1017,11 +923,28 @@
 
 
 
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
 
 
 
+-->
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">共764字</span>
+</div>
 
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_pv">
+    本站访问量:<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_uv">
+    本站总访客量：<span id="busuanzi_value_site_uv"></span>人
+  </span>
+</div>
         
 
 
@@ -1105,7 +1028,10 @@
   
 
 
-  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
 
 
 
@@ -1128,6 +1054,326 @@
 
 
   
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
 
 
 
