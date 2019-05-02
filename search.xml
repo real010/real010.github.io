@@ -1,46 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>使用Github+Hexo搭建属于你自己的博客</title>
-      <link href="/2019/05/01/CreatBlog/"/>
-      <url>/2019/05/01/CreatBlog/</url>
-      
-        <content type="html"><![CDATA[<p>如果你也想要定制一个自己的博客，那么就跟着一起来吧！<br><a id="more"></a></p><h1 id="博客优化"><a href="#博客优化" class="headerlink" title="博客优化"></a>博客优化</h1><h2 id="添加分类列表"><a href="#添加分类列表" class="headerlink" title="添加分类列表"></a>添加分类列表</h2><ul><li>在项目根目录下，执行下面的命令行，新建分类页面，然后会在项目根目录下的 <strong>source</strong> 文件夹中新建一个 <strong>categories</strong> 文件夹。<br><code>hexo new page categories</code></li><li>打开 <strong>categories</strong> 文件夹中的 <strong>index.md</strong> 文件，添加<strong>type</strong>标签 ，设置为 <strong>“categories”</strong>。 </li><li>接着到<strong>theme</strong>文件夹下的 <strong>_config.yml</strong> 配置文件下，定位到 <strong>menu</strong> 模块，把 <strong>categories</strong>前面的<strong><em>#</em></strong>去掉。</li><li>然后将代码提交到<strong>GitHub</strong>重新打开博客页面就可以看到多了一个<strong>分类</strong>。<h2 id="添加博客头像"><a href="#添加博客头像" class="headerlink" title="添加博客头像"></a>添加博客头像</h2><h4 id="使用完整互联网URL"><a href="#使用完整互联网URL" class="headerlink" title="使用完整互联网URL"></a>使用完整互联网URL</h4><ul><li>打开主题文件夹下的 <strong>_config.yml</strong> 配置文件，定位到 <strong>avatar</strong>，然后把一个在线的头像图片地址（百度图片中直接复制链接即可），作为 <strong>url</strong> 的参数。</li><li>将本地代码上传至<strong>GitHub</strong>，刷新页面，就可以了。<h4 id="站点内的地址"><a href="#站点内的地址" class="headerlink" title="站点内的地址"></a>站点内的地址</h4></li><li>将头像放置主题目录下的 <em>source/uploads/</em>（新建 uploads 目录若不存在） 配置为：<em>url: /uploads/avatar.png</em>，或者 放置在 <em>source/images</em> 目录下<br>配置为：<em>url: /images/avatar.png</em>。</li><li>刷新页面重试。<h2 id="代码高亮设置"><a href="#代码高亮设置" class="headerlink" title="代码高亮设置"></a>代码高亮设置</h2></li></ul></li><li>在主题文件夹的 <strong>_config.yml</strong> 配置文件中，定位到 <strong>highlight_theme</strong>，根据个人喜好修改语法高亮。</li><li>由于本人使用<strong>Next</strong>主题，<strong>Next</strong> 默认使用的是白色的 <strong>normal</strong> 主题，可选的语法高亮有 <strong>normal</strong>，<strong>night</strong>， <strong>night blue</strong>， <strong>night bright</strong>，<strong>night eighties</strong>。<h2 id="博客添加站内搜索"><a href="#博客添加站内搜索" class="headerlink" title="博客添加站内搜索"></a>博客添加站内搜索</h2></li></ul><h2 id="百度统计"><a href="#百度统计" class="headerlink" title="百度统计"></a>百度统计</h2><ol><li>登录 <a href="http://tongji.baidu.com/" target="_blank" rel="noopener">百度统计</a>， 定位到站点的代码获取页面</li><li>复制 <em>hm.js?</em> 后面那串统计脚本 id。</li><li>编辑 主题配置文件， 修改字段 <em>baidu_analytics</em> 字段，值设置成你的百度统计脚本 id。<h2 id="网页底部字数统计"><a href="#网页底部字数统计" class="headerlink" title="网页底部字数统计"></a>网页底部字数统计</h2></li></ol><ul><li>在项目根目录安装<strong>hexo</strong>插件<br><code>npm install hexo-wordcount --save</code></li><li><p>打开主题文件夹下的 <em>layout/_partials/footer.swig</em> 文件，在文末添加上下面这段代码。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"theme-info"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"powered-by"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-count"</span>&gt;</span>博客全站共&#123;&#123; totalcount(site) &#125;&#125;字<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>deploy查看效果。</p><h2 id="网页底部添加访问量"><a href="#网页底部添加访问量" class="headerlink" title="网页底部添加访问量"></a>网页底部添加访问量</h2></li><li>上一节已经安装相关插件，所以本次不需要再次安装。</li><li>打开主题文件夹下的 <em>layout/_partials/footer.swig</em> 文件，在文末添加如下代码。<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">"//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"powered-by"</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-user-md"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_site_pv"</span>&gt;</span></span><br><span class="line"> 本站访问量:<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_pv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>次</span><br><span class="line"> <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-divider"</span>&gt;</span>|<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_site_uv"</span>&gt;</span></span><br><span class="line"> 本站总访客量：<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_uv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>人</span><br><span class="line"> <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li></ul>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Think in Java</title>
-      <link href="/2019/03/24/Think-in-Java/"/>
-      <url>/2019/03/24/Think-in-Java/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/2019/03/24/hello-world/"/>
-      <url>/2019/03/24/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><a id="more"></a><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-  
-  
+<search>
+  <entry>
+    <title><![CDATA[使用Github+Hexo搭建属于你自己的博客]]></title>
+    <url>%2F2019%2F05%2F01%2FCreatBlog%2F</url>
+    <content type="text"><![CDATA[如果你也想要定制一个自己的博客，那么就跟着一起来吧！ 博客优化添加分类列表 在项目根目录下，执行下面的命令行，新建分类页面，然后会在项目根目录下的 source 文件夹中新建一个 categories 文件夹。hexo new page categories 打开 categories 文件夹中的 index.md 文件，添加type标签 ，设置为 “categories”。 接着到theme文件夹下的 _config.yml 配置文件下，定位到 menu 模块，把 categories前面的#去掉。 然后将代码提交到GitHub重新打开博客页面就可以看到多了一个分类。添加博客头像使用完整互联网URL 打开主题文件夹下的 _config.yml 配置文件，定位到 avatar，然后把一个在线的头像图片地址（百度图片中直接复制链接即可），作为 url 的参数。 将本地代码上传至GitHub，刷新页面，就可以了。站点内的地址 将头像放置主题目录下的 source/uploads/（新建 uploads 目录若不存在） 配置为：url: /uploads/avatar.png，或者 放置在 source/images 目录下配置为：url: /images/avatar.png。 刷新页面重试。代码高亮设置 在主题文件夹的 _config.yml 配置文件中，定位到 highlight_theme，根据个人喜好修改语法高亮。 由于本人使用Next主题，Next 默认使用的是白色的 normal 主题，可选的语法高亮有 normal，night， night blue， night bright，night eighties。博客添加站内搜索 百度统计 登录 百度统计， 定位到站点的代码获取页面 复制 hm.js? 后面那串统计脚本 id。 编辑 主题配置文件， 修改字段 baidu_analytics 字段，值设置成你的百度统计脚本 id。网页底部字数统计 在项目根目录安装hexo插件npm install hexo-wordcount --save 打开主题文件夹下的 layout/_partials/footer.swig 文件，在文末添加上下面这段代码。 1234&lt;div class="theme-info"&gt; &lt;div class="powered-by"&gt;&lt;/div&gt; &lt;span class="post-count"&gt;博客全站共&#123;&#123; totalcount(site) &#125;&#125;字&lt;/span&gt;&lt;/div&gt; deploy查看效果。 网页底部添加访问量 上一节已经安装相关插件，所以本次不需要再次安装。 打开主题文件夹下的 layout/_partials/footer.swig 文件，在文末添加如下代码。123456789101112&lt;script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"&gt;&lt;/script&gt;&lt;div class="powered-by"&gt; &lt;i class="fa fa-user-md"&gt;&lt;/i&gt; &lt;span id="busuanzi_container_site_pv"&gt; 本站访问量:&lt;span id="busuanzi_value_site_pv"&gt;&lt;/span&gt;次 &lt;/span&gt; &lt;span class="post-meta-divider"&gt;|&lt;/span&gt; &lt;span id="busuanzi_container_site_uv"&gt; 本站总访客量：&lt;span id="busuanzi_value_site_uv"&gt;&lt;/span&gt;人 &lt;/span&gt;&lt;/div&gt;]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Think in Java]]></title>
+    <url>%2F2019%2F03%2F24%2FThink-in-Java%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F03%2F24%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
 </search>
