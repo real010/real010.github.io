@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="real010的博客">
 <meta property="og:description" content="如果你也想要定制一个自己的博客，那么就跟着一起来吧！">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-02T11:56:10.012Z">
+<meta property="og:updated_time" content="2019-05-02T15:58:27.978Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Github+Hexo搭建属于你自己的博客">
 <meta name="twitter:description" content="如果你也想要定制一个自己的博客，那么就跟着一起来吧！">
@@ -401,7 +401,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-02 19:56:10" itemprop="dateModified" datetime="2019-05-02T19:56:10+08:00">2019-05-02</time>
+                <time title="修改时间：2019-05-02 23:58:27" itemprop="dateModified" datetime="2019-05-02T23:58:27+08:00">2019-05-02</time>
               
             
           </span>
@@ -454,7 +454,7 @@
 <li>然后将代码提交到<strong>GitHub</strong>重新打开博客页面就可以看到多了一个<strong>分类</strong>。<h2 id="添加博客头像"><a href="#添加博客头像" class="headerlink" title="添加博客头像"></a>添加博客头像</h2><h4 id="使用完整互联网URL"><a href="#使用完整互联网URL" class="headerlink" title="使用完整互联网URL"></a>使用完整互联网URL</h4><ul>
 <li>打开主题文件夹下的 <strong>_config.yml</strong> 配置文件，定位到 <strong>avatar</strong>，然后把一个在线的头像图片地址（百度图片中直接复制链接即可），作为 <strong>url</strong> 的参数。</li>
 <li>将本地代码上传至<strong>GitHub</strong>，刷新页面，就可以了。<h4 id="站点内的地址"><a href="#站点内的地址" class="headerlink" title="站点内的地址"></a>站点内的地址</h4></li>
-<li>将头像放置主题目录下的 <em>source/uploads/</em>（新建 uploads 目录若不存在） 配置为：<em>url: /uploads/avatar.png</em>，或者 放置在 <em>source/images</em> 目录下<br>配置为：<em>url: /images/avatar.png</em>。</li>
+<li>将头像放置主题目录下的 <code>source/uploads/</code>（新建 uploads 目录若不存在） 配置为：<code>url: /uploads/avatar.png</code>，或者 放置在 <code>source/images</code> 目录下<br>配置为：<code>url: /images/avatar.png</code>。</li>
 <li>刷新页面重试。<h2 id="代码高亮设置"><a href="#代码高亮设置" class="headerlink" title="代码高亮设置"></a>代码高亮设置</h2></li>
 </ul>
 </li>
@@ -463,18 +463,18 @@
 </ul>
 <h2 id="百度统计"><a href="#百度统计" class="headerlink" title="百度统计"></a>百度统计</h2><ol>
 <li>登录 <a href="http://tongji.baidu.com/" target="_blank" rel="noopener">百度统计</a>， 定位到站点的代码获取页面</li>
-<li>复制 <em>hm.js?</em> 后面那串统计脚本 id。</li>
-<li>编辑 主题配置文件， 修改字段 <em>baidu_analytics</em> 字段，值设置成你的百度统计脚本 id。<h2 id="网页底部字数统计"><a href="#网页底部字数统计" class="headerlink" title="网页底部字数统计"></a>网页底部字数统计</h2></li>
+<li>复制 <code>hm.js?</code> 后面那串统计脚本 id。</li>
+<li>编辑 主题配置文件， 修改字段 <code>baidu_analytics</code> 字段，值设置成你的百度统计脚本 id。<h2 id="网页底部字数统计"><a href="#网页底部字数统计" class="headerlink" title="网页底部字数统计"></a>网页底部字数统计</h2></li>
 </ol>
 <ul>
 <li>在项目根目录安装<strong>hexo</strong>插件<br><code>npm install hexo-wordcount --save</code></li>
-<li><p>打开主题文件夹下的 <em>layout/_partials/footer.swig</em> 文件，在文末添加上下面这段代码。</p>
+<li><p>打开主题文件夹下的 <code>layout/_partials/footer.swig</code> 文件，在文末添加上下面这段代码。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"theme-info"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"powered-by"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-count"</span>&gt;</span>博客全站共&#123;&#123; totalcount(site) &#125;&#125;字<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>deploy查看效果。</p>
 <h2 id="网页底部添加访问量"><a href="#网页底部添加访问量" class="headerlink" title="网页底部添加访问量"></a>网页底部添加访问量</h2></li>
 <li>上一节已经安装相关插件，所以本次不需要再次安装。</li>
-<li>打开主题文件夹下的 <em>layout/_partials/footer.swig</em> 文件，在文末添加如下代码。<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">"//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"powered-by"</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-user-md"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_site_pv"</span>&gt;</span></span><br><span class="line"> 本站访问量:<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_pv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>次</span><br><span class="line"> <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-divider"</span>&gt;</span>|<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_site_uv"</span>&gt;</span></span><br><span class="line"> 本站总访客量：<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_uv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>人</span><br><span class="line"> <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<li>打开主题文件夹下的 <code>layout/_partials/footer.swig</code> 文件，在文末添加如下代码。<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">"//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"powered-by"</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-user-md"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_site_pv"</span>&gt;</span></span><br><span class="line"> 本站访问量:<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_pv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>次</span><br><span class="line"> <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-divider"</span>&gt;</span>|<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_site_uv"</span>&gt;</span></span><br><span class="line"> 本站总访客量：<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_uv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>人</span><br><span class="line"> <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
