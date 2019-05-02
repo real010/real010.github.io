@@ -24,6 +24,13 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-flash.min.css?v=1.0.2">
+
 
 
 
@@ -188,10 +195,6 @@
       </a>
     </div>
     
-      
-        <p class="site-subtitle">WANGKAI</p>
-      
-    
     
   </div>
 
@@ -325,8 +328,8 @@
     <link itemprop="mainEntityOfPage" href="http://chnwangkai.top/2019/05/01/CreatBlog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王凯">
-      <meta itemprop="description" content="JAVA">
+      <meta itemprop="name" content="real010">
+      <meta itemprop="description" content="只有光头才能变强">
       <meta itemprop="image" content="/images/20190501224014.png">
     </span>
 
@@ -554,10 +557,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/images/20190501224014.png" alt="王凯">
+              <img class="site-author-image" itemprop="image" src="/images/20190501224014.png" alt="real010">
             
-              <p class="site-author-name" itemprop="name">王凯</p>
-              <div class="site-description motion-element" itemprop="description">JAVA</div>
+              <p class="site-author-name" itemprop="name">real010</p>
+              <div class="site-description motion-element" itemprop="description">只有光头才能变强</div>
           </div>
 
           
@@ -634,7 +637,7 @@
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">王凯</span>
+  <span class="author" itemprop="copyrightHolder">real010</span>
 
   
 
@@ -1127,9 +1130,14 @@
               })
           } else {
             
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1 }))
+                .done(function() {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function() {
+                  console.log('Failed to create');
+                });
             
           }
         })
