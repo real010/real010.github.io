@@ -103,17 +103,17 @@
 
 
 
-  <meta name="description" content="只有光头才能变强">
+  <meta name="description" content="Java基础学习笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Think in Java">
+<meta property="og:title" content="Java基础知识（一）">
 <meta property="og:url" content="http://chnwangkai.top/2019/03/24/Think-in-Java/index.html">
 <meta property="og:site_name" content="real010的博客">
-<meta property="og:description" content="只有光头才能变强">
+<meta property="og:description" content="Java基础学习笔记">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-24T13:42:11.160Z">
+<meta property="og:updated_time" content="2019-05-13T16:10:17.484Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Think in Java">
-<meta name="twitter:description" content="只有光头才能变强">
+<meta name="twitter:title" content="Java基础知识（一）">
+<meta name="twitter:description" content="Java基础学习笔记">
 
 
 
@@ -131,7 +131,7 @@
   };
 </script>
 
-  <title>Think in Java | real010的博客</title>
+  <title>Java基础知识（一） | real010的博客</title>
   
 
 
@@ -358,7 +358,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Think in Java
+          <h1 class="post-title" itemprop="name headline">Java基础知识（一）
 
               
             
@@ -384,17 +384,47 @@
                 
               
 
-              <time title="创建时间：2019-03-24 21:41:00 / 修改时间：21:42:11" itemprop="dateCreated datePublished" datetime="2019-03-24T21:41:00+08:00">2019-03-24</time>
+              <time title="创建时间：2019-03-24 21:41:00" itemprop="dateCreated datePublished" datetime="2019-03-24T21:41:00+08:00">2019-03-24</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-14 00:10:17" itemprop="dateModified" datetime="2019-05-14T00:10:17+08:00">2019-05-14</time>
               
             
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java基础/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -403,7 +433,7 @@
 
           
           
-            <span id="/2019/03/24/Think-in-Java/" class="leancloud_visitors" data-flag-title="Think in Java">
+            <span id="/2019/03/24/Think-in-Java/" class="leancloud_visitors" data-flag-title="Java基础知识（一）">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -434,7 +464,31 @@
       
 
       
-        
+        <p>Java基础学习笔记</p>
+<a id="more"></a>
+<hr>
+<h1 id="Java抽象类"><a href="#Java抽象类" class="headerlink" title="Java抽象类"></a>Java抽象类</h1><ul>
+<li>Java抽象类中可以有抽象方法，也可以没有抽象方法，只要有一个抽象方法，类前就必须有 <em>abstract</em> 关键字</li>
+<li>抽象类不可以创建对象，但是可以声明一个引用。</li>
+<li>抽象类中的抽象方法可以不用给出实现，只用给出方法声明，抽象类注定要被继承，若子类是具体类，则该具体子类中必须实现抽象类中定义的所有抽象方法（子类中实现抽象方法时必须符合方法覆盖的语法规则）；若子类为抽象类，则子类不能定义与父类同名的抽象方法。</li>
+<li>抽象类中的非抽象方法也可调用抽象方法。</li>
+<li><em>abstract</em> 不能与 <em>final</em> 一同修饰类（final修饰的类不能被继承），同样，<em>abstract</em> 也不能与 <em>private</em>、<em>static</em>、<em>native</em> 共同修饰一个方法（静态方法会被直接调用）。</li>
+</ul>
+<hr>
+<h1 id="方法覆盖与重载的规则与区别"><a href="#方法覆盖与重载的规则与区别" class="headerlink" title="方法覆盖与重载的规则与区别"></a>方法覆盖与重载的规则与区别</h1><ul>
+<li>方法重载：发生在同一个类中，方法名必须相同，参数类型或者参数个数二者之一必须不同，只有返回值不同的两个方法编译不会通过。</li>
+<li>方法覆盖：发生自父子类中，方法名与参数列表必须相同，返回值范围小于等于父类，抛出异常的范围小于等于父类。（若父类方法被 <em>private</em> 修饰，则子类不能重写该方法）。</li>
+</ul>
+<hr>
+<h1 id="Java接口（interface）"><a href="#Java接口（interface）" class="headerlink" title="Java接口（interface）"></a>Java接口（interface）</h1><hr>
+<h1 id="Java策略模式"><a href="#Java策略模式" class="headerlink" title="Java策略模式"></a>Java策略模式</h1><hr>
+<h1 id="String对象两种创建方法区别"><a href="#String对象两种创建方法区别" class="headerlink" title="String对象两种创建方法区别"></a>String对象两种创建方法区别</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">"abc"</span>;</span><br><span class="line">String str2 = <span class="keyword">new</span> String(<span class="string">"abc"</span>);</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="Java中-与-equals-的区别"><a href="#Java中-与-equals-的区别" class="headerlink" title="Java中 == 与 equals 的区别"></a>Java中 == 与 equals 的区别</h1><ul>
+<li>==：判断两个对象的地址是不是相同，即判断两个引用是否指向同一对象（针对基本类型，则比较的是值是否相同）。</li>
+<li>equals：若类中未重写 <em>equals</em> 方法，则使用 <em>equals</em>方法等价于使用 <em>==</em> 进行比较；但在一些特殊的类当中，<em>equals</em> 方法被覆盖，如String 中的 <em>equals（）</em> 方法被重写过，String类的 <em>equals</em> 方法比较的是对象的值，即两个对象的内容相等，则返回值为 <em>true</em>。</li>
+</ul>
+
       
     </div>
 
@@ -463,10 +517,6 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/03/24/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
             
           </div>
 
@@ -520,8 +570,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -538,12 +597,31 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
 
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
               
 
               
@@ -569,6 +647,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java抽象类"><span class="nav-number">1.</span> <span class="nav-text">Java抽象类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法覆盖与重载的规则与区别"><span class="nav-number">2.</span> <span class="nav-text">方法覆盖与重载的规则与区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java接口（interface）"><span class="nav-number">3.</span> <span class="nav-text">Java接口（interface）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java策略模式"><span class="nav-number">4.</span> <span class="nav-text">Java策略模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#String对象两种创建方法区别"><span class="nav-number">5.</span> <span class="nav-text">String对象两种创建方法区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java中-与-equals-的区别"><span class="nav-number">6.</span> <span class="nav-text">Java中 == 与 equals 的区别</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -612,7 +707,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共764字</span>
+  <span class="post-count">全站共1.2k字</span>
 </div>
 
         
