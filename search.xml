@@ -1,19 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[使用Github+Hexo搭建属于你自己的博客]]></title>
-    <url>%2F2019%2F05%2F01%2FCreatBlog%2F</url>
-    <content type="text"><![CDATA[如果你也想要定制一个自己的博客，那么就跟着一起来吧！ 博客优化添加分类列表 在项目根目录下，执行下面的命令行，新建分类页面，然后会在项目根目录下的 source 文件夹中新建一个 categories 文件夹。hexo new page categories 打开 categories 文件夹中的 index.md 文件，添加type标签 ，设置为 “categories”。 接着到theme文件夹下的 _config.yml 配置文件下，定位到 menu 模块，把 categories前面的#去掉。 然后将代码提交到GitHub重新打开博客页面就可以看到多了一个分类。添加博客头像使用完整互联网URL 打开主题文件夹下的 _config.yml 配置文件，定位到 avatar，然后把一个在线的头像图片地址（百度图片中直接复制链接即可），作为 url 的参数。 将本地代码上传至GitHub，刷新页面，就可以了。站点内的地址 将头像放置主题目录下的 source/uploads/（新建 uploads 目录若不存在） 配置为：url: /uploads/avatar.png，或者 放置在 source/images 目录下配置为：url: /images/avatar.png。 刷新页面重试。代码高亮设置 在主题文件夹的 _config.yml 配置文件中，定位到 highlight_theme，根据个人喜好修改语法高亮。 由于本人使用Next主题，Next 默认使用的是白色的 normal 主题，可选的语法高亮有 normal，night， night blue， night bright，night eighties。博客添加站内搜索 百度统计 登录 百度统计， 定位到站点的代码获取页面 复制 hm.js? 后面那串统计脚本 id。 编辑 主题配置文件， 修改字段 baidu_analytics 字段，值设置成你的百度统计脚本 id。网页底部字数统计 在项目根目录安装hexo插件npm install hexo-wordcount --save 打开主题文件夹下的 layout/_partials/footer.swig 文件，在文末添加上下面这段代码。 1234&lt;div class="theme-info"&gt; &lt;div class="powered-by"&gt;&lt;/div&gt; &lt;span class="post-count"&gt;博客全站共&#123;&#123; totalcount(site) &#125;&#125;字&lt;/span&gt;&lt;/div&gt; deploy查看效果。 网页底部添加访问量 上一节已经安装相关插件，所以本次不需要再次安装。 打开主题文件夹下的layout/_partials/footer.swig 文件，在文末添加如下代码。123456789101112&lt;script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"&gt;&lt;/script&gt;&lt;div class="powered-by"&gt; &lt;i class="fa fa-user-md"&gt;&lt;/i&gt; &lt;span id="busuanzi_container_site_pv"&gt; 本站访问量:&lt;span id="busuanzi_value_site_pv"&gt;&lt;/span&gt;次 &lt;/span&gt; &lt;span class="post-meta-divider"&gt;|&lt;/span&gt; &lt;span id="busuanzi_container_site_uv"&gt; 本站总访客量：&lt;span id="busuanzi_value_site_uv"&gt;&lt;/span&gt;人 &lt;/span&gt;&lt;/div&gt;]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>计算机系统</title>
+      <link href="/2019/10/24/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"/>
+      <url>/2019/10/24/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/</url>
+      
+        <content type="html"><![CDATA[<p>《深入理解计算机系统》读书笔记<br><a id="more"></a></p><h2 id="操作系统的功能"><a href="#操作系统的功能" class="headerlink" title="操作系统的功能"></a>操作系统的功能</h2><ul><li>防止硬件被失控的应用程序滥用</li><li>向应用程序提供简单一致的机制来控制复杂而又通常大不相同的低级硬件设备<h2 id="利用位级运算实现两个值的交换"><a href="#利用位级运算实现两个值的交换" class="headerlink" title="利用位级运算实现两个值的交换"></a>利用位级运算实现两个值的交换</h2></li></ul><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inplace_swap</span><span class="params">(<span class="keyword">int</span> *x,<span class="keyword">int</span> *y)</span> </span>&#123;</span><br><span class="line">    *y = *x^*y;</span><br><span class="line">    *x = *x^*y;</span><br><span class="line">    *y = *x^*y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><em>《cs：app》作者注：虽然该方法在交换两个数值时不需要第三个位置来存储，但是这种交换方式并没有性能上的优化，仅仅作为一个智力游戏，拓展思路。</em></p><h2 id="逻辑运算与位运算的区别"><a href="#逻辑运算与位运算的区别" class="headerlink" title="逻辑运算与位运算的区别"></a>逻辑运算与位运算的区别</h2><ul><li>逻辑运算认为所有非零的参数都表示为TRUE，而参数0表示为FALSE。运算返回1或者0；而位运算根据操作数的不同进行按位运算，返回运算结果</li><li>逻辑运算的短路特性：对于逻辑运算符&amp;&amp;和||，如果第一个参数求值就能确定表达式的结果，那么逻辑运算符就不会对第二个参数求值。例如表达式<strong>a&amp;&amp;5/a</strong>就不会造成被零除，而表达式 <strong><em>p&amp;&amp;*p</em></strong> 也不会导致间接引用空指针。<h2 id="移位运算-移动k位（k-gt-数据类型位数）"><a href="#移位运算-移动k位（k-gt-数据类型位数）" class="headerlink" title="移位运算,移动k位（k&gt;=数据类型位数）"></a>移位运算,移动k位（k&gt;=数据类型位数）</h2>若数据类型<em>int</em>为32位数据（w=32）<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>  lval = <span class="number">0xFEDCBA98</span> &lt;&lt; <span class="number">32</span>;</span><br><span class="line"><span class="keyword">int</span>  aval = <span class="number">0xFEDCBA98</span> &gt;&gt; <span class="number">36</span>;</span><br><span class="line"><span class="keyword">unsigned</span> uval = <span class="number">0xFEDCBA98</span>U &gt;&gt; <span class="number">40</span>;</span><br><span class="line">移位后得到的结果为：</span><br><span class="line">lval  <span class="number">0xFEDCBA98</span></span><br><span class="line">aval  <span class="number">0xFFEDCBA9</span></span><br><span class="line">uval  <span class="number">0x00FEDCBA</span></span><br></pre></td></tr></table></figure></li></ul><p>因此实际上的移位量就是通过计算 k mod w得到的。</p>]]></content>
+      
+      
       <categories>
-        <category>Hexo</category>
+          
+          <category> 《CS:APP》 </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[Java基础知识（一）]]></title>
-    <url>%2F2019%2F03%2F24%2FThink-in-Java%2F</url>
-    <content type="text"><![CDATA[Java基础学习笔记 Java抽象类 Java抽象类中可以有抽象方法，也可以没有抽象方法，只要有一个抽象方法，类前就必须有 abstract 关键字 抽象类不可以创建对象，但是可以声明一个引用。 抽象类中的抽象方法可以不用给出实现，只用给出方法声明，抽象类注定要被继承，若子类是具体类，则该具体子类中必须实现抽象类中定义的所有抽象方法（子类中实现抽象方法时必须符合方法覆盖的语法规则）；若子类为抽象类，则子类不能定义与父类同名的抽象方法。 抽象类中的非抽象方法也可调用抽象方法。 abstract 不能与 final 一同修饰类（final修饰的类不能被继承），同样，abstract 也不能与 private、static、native 共同修饰一个方法（静态方法会被直接调用）。 方法覆盖与重载的规则与区别 方法重载：发生在同一个类中，方法名必须相同，参数类型或者参数个数二者之一必须不同，只有返回值不同的两个方法编译不会通过。 方法覆盖：发生自父子类中，方法名与参数列表必须相同，返回值范围小于等于父类，抛出异常的范围小于等于父类。（若父类方法被 private 修饰，则子类不能重写该方法）。 Java接口（interface） Java策略模式 String对象两种创建方法区别12String str1 = "abc";String str2 = new String("abc"); Java中 == 与 equals 的区别 ==：判断两个对象的地址是不是相同，即判断两个引用是否指向同一对象（针对基本类型，则比较的是值是否相同）。 equals：若类中未重写 equals 方法，则使用 equals方法等价于使用 == 进行比较；但在一些特殊的类当中，equals 方法被覆盖，如String 中的 equals（） 方法被重写过，String类的 equals 方法比较的是对象的值，即两个对象的内容相等，则返回值为 true。]]></content>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>物理层学习笔记</title>
+      <link href="/2019/10/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+      <url>/2019/10/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
+      
+        <content type="html"><![CDATA[<p>计算机网络物理层的学习笔记</p><a id="more"></a><hr><h2 id="物理层解决的是如何在连接各种计算机的传输媒体上传输数据比特流，并且尽可能的屏蔽掉传输媒体和通信手段的差异。"><a href="#物理层解决的是如何在连接各种计算机的传输媒体上传输数据比特流，并且尽可能的屏蔽掉传输媒体和通信手段的差异。" class="headerlink" title="物理层解决的是如何在连接各种计算机的传输媒体上传输数据比特流，并且尽可能的屏蔽掉传输媒体和通信手段的差异。"></a>物理层解决的是如何在连接各种计算机的传输媒体上传输数据比特流，并且尽可能的屏蔽掉传输媒体和通信手段的差异。</h2><hr><ul><li>物理层的传输数据的单位为数据帧</li></ul><hr>]]></content>
+      
+      
       <categories>
-        <category>Java基础</category>
+          
+          <category> 计算机网络 </category>
+          
       </categories>
-  </entry>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java基础知识(二)</title>
+      <link href="/2019/07/29/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E4%BA%8C/"/>
+      <url>/2019/07/29/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E4%BA%8C/</url>
+      
+        <content type="html"><![CDATA[<p>Java基础学习笔记（二）</p><a id="more"></a><hr><h2 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h2><ul><li>switch语句的的表达式，只能是如下的6种数据类型之一：<br><em>Byte、short、char、int、枚举类型（jdk5.0新增）、String（jdk7.0新增）</em></li></ul><hr><h2 id="break-amp-continue"><a href="#break-amp-continue" class="headerlink" title="break &amp; continue"></a>break &amp; continue</h2><ul><li><p>break语句能用在switch和循环结构中，continue只能用在循环结构中。</p></li><li><p>continue和break默认跳出距离最近的一条循环或者语句，可以加标签使得结束外层循环。</p></li></ul><hr><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ul><li><p>数组是引用数据类型。</p></li><li><p>数组会默认初始化值。</p></li><li><p>数组声明时的数字可以是变量。</p></li></ul><hr><h3 id="数组打印问题"><a href="#数组打印问题" class="headerlink" title="数组打印问题"></a>数组打印问题</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">System.out.println(arr);<span class="comment">//地址值</span></span><br><span class="line"><span class="keyword">char</span>[] arr1 = <span class="keyword">new</span> <span class="keyword">char</span>[]&#123;a, b, c&#125;;</span><br><span class="line">System.out.println(arr1);</span><br><span class="line"></span><br><span class="line">输出结果：abc</span><br></pre></td></tr></table></figure><p><em>原因：在 Java 的println()方法重载中有一个方法为println(char[] a) 方法体为遍历该char型数组。</em></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>使用Github+Hexo搭建属于你自己的博客</title>
+      <link href="/2019/05/01/CreatBlog/"/>
+      <url>/2019/05/01/CreatBlog/</url>
+      
+        <content type="html"><![CDATA[<p>如果你也想要定制一个自己的博客，那么就跟着一起来吧！<br><a id="more"></a></p><h1 id="博客优化"><a href="#博客优化" class="headerlink" title="博客优化"></a>博客优化</h1><h2 id="添加分类列表"><a href="#添加分类列表" class="headerlink" title="添加分类列表"></a>添加分类列表</h2><ul><li>在项目根目录下，执行下面的命令行，新建分类页面，然后会在项目根目录下的 <strong>source</strong> 文件夹中新建一个 <strong>categories</strong> 文件夹。<br><code>hexo new page categories</code></li><li>打开 <strong>categories</strong> 文件夹中的 <strong>index.md</strong> 文件，添加<strong>type</strong>标签 ，设置为 <strong>“categories”</strong>。 </li><li>接着到<strong>theme</strong>文件夹下的 <strong>_config.yml</strong> 配置文件下，定位到 <strong>menu</strong> 模块，把 <strong>categories</strong>前面的<strong><em>#</em></strong>去掉。</li><li>然后将代码提交到<strong>GitHub</strong>重新打开博客页面就可以看到多了一个<strong>分类</strong>。<h2 id="添加博客头像"><a href="#添加博客头像" class="headerlink" title="添加博客头像"></a>添加博客头像</h2><h3 id="使用完整互联网URL"><a href="#使用完整互联网URL" class="headerlink" title="使用完整互联网URL"></a>使用完整互联网URL</h3></li><li>打开主题文件夹下的 <strong>_config.yml</strong> 配置文件，定位到 <strong>avatar</strong>，然后把一个在线的头像图片地址（百度图片中直接复制链接即可），作为 <strong>url</strong> 的参数。</li><li>将本地代码上传至<strong>GitHub</strong>，刷新页面，就可以了。<h3 id="站点内的地址"><a href="#站点内的地址" class="headerlink" title="站点内的地址"></a>站点内的地址</h3></li><li>将头像放置主题目录下的 <code>source/uploads/</code>（新建 uploads 目录若不存在） 配置为：<code>url: /uploads/avatar.png</code>，或者 放置在 <code>source/images</code> 目录下<br>配置为：<code>url: /images/avatar.png</code>。</li><li>刷新页面重试。<h2 id="代码高亮设置"><a href="#代码高亮设置" class="headerlink" title="代码高亮设置"></a>代码高亮设置</h2></li><li>在主题文件夹的 <strong>_config.yml</strong> 配置文件中，定位到 <strong>highlight_theme</strong>，根据个人喜好修改语法高亮。</li><li>由于本人使用<strong>Next</strong>主题，<strong>Next</strong> 默认使用的是白色的 <strong>normal</strong> 主题，可选的语法高亮有 <strong>normal</strong>，<strong>night</strong>， <strong>night blue</strong>， <strong>night bright</strong>，<strong>night eighties</strong>。<h2 id="博客添加站内搜索"><a href="#博客添加站内搜索" class="headerlink" title="博客添加站内搜索"></a>博客添加站内搜索</h2></li></ul><h2 id="百度统计"><a href="#百度统计" class="headerlink" title="百度统计"></a>百度统计</h2><ol><li>登录 <a href="http://tongji.baidu.com/" target="_blank" rel="noopener">百度统计</a>， 定位到站点的代码获取页面</li><li>复制 <code>hm.js?</code> 后面那串统计脚本 id。</li><li>编辑 主题配置文件， 修改字段 <code>baidu_analytics</code> 字段，值设置成你的百度统计脚本 id。<h2 id="网页底部字数统计"><a href="#网页底部字数统计" class="headerlink" title="网页底部字数统计"></a>网页底部字数统计</h2></li></ol><ul><li>在项目根目录安装<strong>hexo</strong>插件<br><code>npm install hexo-wordcount --save</code></li><li><p>打开主题文件夹下的 <code>layout/_partials/footer.swig</code> 文件，在文末添加上下面这段代码。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"theme-info"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"powered-by"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-count"</span>&gt;</span>博客全站共&#123;&#123; totalcount(site) &#125;&#125;字<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>deploy查看效果。</p><h2 id="网页底部添加访问量"><a href="#网页底部添加访问量" class="headerlink" title="网页底部添加访问量"></a>网页底部添加访问量</h2></li><li>上一节已经安装相关插件，所以本次不需要再次安装。</li><li>打开主题文件夹下的<code>layout/_partials/footer.swig</code> 文件，在文末添加如下代码。<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">"//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"powered-by"</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-user-md"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_site_pv"</span>&gt;</span></span><br><span class="line"> 本站访问量:<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_pv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>次</span><br><span class="line"> <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-divider"</span>&gt;</span>|<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_site_uv"</span>&gt;</span></span><br><span class="line"> 本站总访客量：<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_uv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>人</span><br><span class="line"> <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+  
+  
 </search>
