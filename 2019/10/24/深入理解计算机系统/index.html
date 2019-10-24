@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="real010的博客">
 <meta property="og:description" content="《深入理解计算机系统》读书笔记">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-24T13:48:40.868Z">
+<meta property="og:updated_time" content="2019-10-24T13:57:44.106Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机系统">
 <meta name="twitter:description" content="《深入理解计算机系统》读书笔记">
@@ -384,7 +384,7 @@
                 
               
 
-              <time title="创建时间：2019-10-24 20:38:48 / 修改时间：21:48:40" itemprop="dateCreated datePublished" datetime="2019-10-24T20:38:48+08:00">2019-10-24</time>
+              <time title="创建时间：2019-10-24 20:38:48 / 修改时间：21:57:44" itemprop="dateCreated datePublished" datetime="2019-10-24T20:38:48+08:00">2019-10-24</time>
             
 
             
@@ -464,7 +464,7 @@
 <li>逻辑运算的短路特性：对于逻辑运算符&amp;&amp;和||，如果第一个参数求值就能确定表达式的结果，那么逻辑运算符就不会对第二个参数求值。例如表达式<strong>a&amp;&amp;5/a</strong>就不会造成被零除，而表达式 <strong><em>p&amp;&amp;*p</em></strong> 也不会导致间接引用空指针。<h2 id="移位运算-移动k位（k-gt-数据类型位数）"><a href="#移位运算-移动k位（k-gt-数据类型位数）" class="headerlink" title="移位运算,移动k位（k&gt;=数据类型位数）"></a>移位运算,移动k位（k&gt;=数据类型位数）</h2>若数据类型<em>int</em>为32位数据（w=32）<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>  lval = <span class="number">0xFEDCBA98</span> &lt;&lt; <span class="number">32</span>;</span><br><span class="line"><span class="keyword">int</span>  aval = <span class="number">0xFEDCBA98</span> &gt;&gt; <span class="number">36</span>;</span><br><span class="line"><span class="keyword">unsigned</span> uval = <span class="number">0xFEDCBA98</span>U &gt;&gt; <span class="number">40</span>;</span><br><span class="line">移位后得到的结果为：</span><br><span class="line">lval  <span class="number">0xFEDCBA98</span></span><br><span class="line">aval  <span class="number">0xFFEDCBA9</span></span><br><span class="line">uval  <span class="number">0x00FEDCBA</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>因此实际上的移位量就是通过计算 k mod w得到的。</p>
+<p>因此实际上的移位量就是通过k对w取模得到的。</p>
 
       
     </div>
@@ -1216,6 +1216,90 @@
 
   
 
+  
+  	 <!-- custom analytics part create by xiamo -->
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("lJiJB72ffS52J8JIUbLccWF2-gzGzoHsz", "ES1cPh99nNmtICntIw7fX93e");</script>
+<script>
+function showTime(Counter) {
+	var query = new AV.Query(Counter);
+	$(".leancloud_visitors").each(function() {
+		var url = $(this).attr("id").trim();
+		query.equalTo("url", url);
+		query.find({
+			success: function(results) {
+				if (results.length == 0) {
+					var content = $(document.getElementById(url)).text() + ': 0';
+					$(document.getElementById(url)).text(content);
+					return;
+				}
+				for (var i = 0; i < results.length; i++) {
+					var object = results[i];
+					var content = $(document.getElementById(url)).text() + ': ' + object.get('time');
+					$(document.getElementById(url)).text(content);
+				}
+			},
+			error: function(object, error) {
+				console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+
+	});
+}
+
+function addCount(Counter) {
+	var Counter = AV.Object.extend("Counter");
+	url = $(".leancloud_visitors").attr('id').trim();
+	title = $(".leancloud_visitors").attr('data-flag-title').trim();
+	var query = new AV.Query(Counter);
+	query.equalTo("url", url);
+	query.find({
+		success: function(results) {
+			if (results.length > 0) {
+				var counter = results[0];
+				counter.fetchWhenSave(true);
+				counter.increment("time");
+				counter.save(null, {
+					success: function(counter) {
+						var content = $(document.getElementById(url)).text() + ': ' + counter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(counter, error) {
+						console.log('Failed to save Visitor num, with error message: ' + error.message);
+					}
+				});
+			} else {
+				var newcounter = new Counter();
+				newcounter.set("title", title);
+				newcounter.set("url", url);
+				newcounter.set("time", 1);
+				newcounter.save(null, {
+					success: function(newcounter) {
+					    console.log("newcounter.get('time')="+newcounter.get('time'));
+						var content = $(document.getElementById(url)).text() + ': ' + newcounter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(newcounter, error) {
+						console.log('Failed to create');
+					}
+				});
+			}
+		},
+		error: function(error) {
+			console.log('Error:' + error.code + " " + error.message);
+		}
+	});
+}
+$(function() {
+	var Counter = AV.Object.extend("Counter");
+	if ($('.leancloud_visitors').length == 1) {
+		addCount(Counter);
+	} else if ($('.post-title-link').length > 1) {
+		showTime(Counter);
+	}
+});
+</script>
+  
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
 <!-- 页面点击小红心 -->
